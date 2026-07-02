@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">🚀 ViraMediaWeb</h1>
-<center><h5>Designed By Mostafa MirMousavi</h5></center>
+<h5 align="center">Designed By Mostafa MirMousavi</h5>
 
 <p align="center">
 Lightweight Web File Manager + Media Server + Mini CDN for ESP8266 / ESP32
