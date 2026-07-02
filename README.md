@@ -180,6 +180,17 @@ Fully async architecture (no blocking server calls)
 Designed for low memory microcontrollers
 Optimized for LAN usage
 Works as embedded HTTP file server
+
+🧩 Integration Example
+
+<img src="http://DEVICE_IP/logo.png">
+
+<script>
+fetch("http://DEVICE_IP/files")
+.then(r => r.json())
+.then(d => console.log(d));
+</script>
+
 👨‍💻 Author
 
 Mostafa MirMousavi (viramedar)
