@@ -33,7 +33,7 @@ It works like a **mini cloud server** directly on your microcontroller.
 - 🖼️ Image preview in browser
 - 📂 File listing via API
 - 🗑️ Delete files remotely
-- 🌐 Direct file access (`http://ip/filename`)
+- 🌐 Direct file access (`http://ip/vfm`)
 - ⚡ Lightweight & fast (LittleFS)
 - 🔌 Async Web Server support
 
