@@ -43,7 +43,7 @@ void setup() {
         <html>
         <head>
         <meta charset="UTF-8">
-        <title>My Project</title>
+        <title>Vira Meia Web</title>
         </head>
 
         <body style="background:#111;color:white;text-align:center;">
@@ -53,7 +53,7 @@ void setup() {
 
         <img src="/logo.png" style="width:160px;margin-top:20px;">
 
-        <p>Powered by ESP8266 + ViraMediaWeb</p>
+        <p>Powered by Mostafa MirMousavi (ESP8266 + ViraMediaWeb)</p>
 
 
         <script>
