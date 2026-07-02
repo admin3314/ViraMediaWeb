@@ -39,10 +39,6 @@ It works like a **mini cloud server** directly on your microcontroller.
 
 ---
 
-## 🖥️ Web Interface
-
----
-
 ## 🧠 Supported Platforms
 
 - ESP8266 (NodeMCU / Wemos D1 Mini)
@@ -54,12 +50,10 @@ It works like a **mini cloud server** directly on your microcontroller.
 
 
 ESP8266 / ESP32
-↓
-LittleFS / SPIFFS Storage
-↓
-Async Web Server
-↓
-REST API + Web UI (ViraMediaWeb Panel)
+→ LittleFS / SPIFFS File System
+→ Async Web Server Engine
+→ ViraMediaWeb UI Layer
+→ REST API Interface
 
 
 ---
@@ -120,22 +114,28 @@ void loop() {
 ```
 <p><hr></p>
 
-🌐 Web Access
+## 🌐 Web Access
 
 After uploading firmware, open:
 
-http://DEVICE_IP/vfm
+<b> http://DEVICE_IP/ → System Web UI </b>
+
+<b> http://DEVICE_IP/vfm  → File Manager Dashboard </b>
+
 
 👉 Dashboard (File Manager UI) will load automatically.
 
 📁 API Endpoints
-Route	Method	Description
-/	GET	Web UI Dashboard
-/upload	POST	Upload file
-/files	GET	List all files
-/delete?name=	GET	Delete file
-/storage	GET	Storage info
-🖼 File Access (Direct CDN Mode)
+| Route | Method | Description |
+|------|--------|-------------|
+| / | GET | System Web UI |
+| /vfm | GET | Web UI File Manager Dashboard |
+| /upload | POST | Upload file |
+| /files | GET | List files |
+| /delete?name= | GET | Delete file |
+| /storage | GET | Storage info |
+
+<p></p>
 
 Any uploaded file can be accessed directly:
 
@@ -180,11 +180,11 @@ Use API in your own projects
 <p><hr></p>
 
 
-🧩 Integration Example (Web Project)
+## 🧩 Integration Example (Web Project)
 
 You can use uploaded files inside your own website:
 
-```cpp
+```html
 <img src="http://DEVICE_IP/logo.png" />
 <script>
 fetch("http://DEVICE_IP/files")
@@ -195,24 +195,24 @@ fetch("http://DEVICE_IP/files")
 <p><hr></p>
 
 
-🧠 Technical Notes
+## 🧠 Technical Notes
 Fully async architecture (no blocking server calls)
 Designed for low memory microcontrollers
 Optimized for LAN usage
 Works as embedded HTTP file server
 
 
-👨‍💻 Author
+## 👨‍💻 Author
 
 <a href="https://t.me/viraep"><b>Mostafa MirMousavi</b></a>  <a href="https://t.me/viramedar"><b>(viramedar)</b></a>
 
 Embedded Systems | Network Engineering | IoT Development | Infrastructure Design
 
-📜 License
+## 📜 License
 
 MIT License
 
-🚀 ViraMediaWeb Concept
+## 🚀 ViraMediaWeb Concept
 
 Turn your ESP device into a smart web storage node inside your network
 
