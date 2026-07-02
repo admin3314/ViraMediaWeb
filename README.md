@@ -28,7 +28,7 @@ It works like a **mini cloud server** directly on your microcontroller.
 
 ## ⚡ Features
 
-- 📁 Web-based file manager (UI dashboard)
+- 📁 Modern web-based file manager dashboard
 - ⬆️ Drag & Drop file upload
 - 🖼️ Image preview in browser
 - 📂 File listing via API
@@ -36,6 +36,12 @@ It works like a **mini cloud server** directly on your microcontroller.
 - 🌐 Direct file access (`http://ip/vfm`)
 - ⚡ Lightweight & fast (LittleFS)
 - 🔌 Async Web Server support
+
+---
+## 🖥️ Web Interface
+
+Access via browser:
+http://DEVICE_IP/vfm
 
 ---
 
@@ -50,10 +56,11 @@ It works like a **mini cloud server** directly on your microcontroller.
 
 
 ESP8266 / ESP32
-→ LittleFS / SPIFFS File System
-→ Async Web Server Engine
-→ ViraMediaWeb UI Layer
-→ REST API Interface
+→ File System Layer (LittleFS / SPIFFS)
+→ Async HTTP Server Engine
+→ ViraMediaWeb UI Core
+→ REST API Gateway
+→ Client Browser / External Apps
 
 
 ---
@@ -116,11 +123,12 @@ void loop() {
 
 ## 🌐 Web Access
 
-After uploading firmware, open:
+- `/`  
+  Main System Web UI (your custom ESP application interface)
 
-<b> http://DEVICE_IP/ → System Web UI </b>
-
-<b> http://DEVICE_IP/vfm  → File Manager Dashboard </b>
+- `/vfm`  
+  ViraMediaWeb File Manager Dashboard  
+  (File upload, delete, preview and storage management)
 
 
 👉 Dashboard (File Manager UI) will load automatically.
@@ -135,15 +143,15 @@ After uploading firmware, open:
 | /delete?name= | GET | Delete file |
 | /storage | GET | Storage info |
 
+<br></br>
 <p></p>
-
-Any uploaded file can be accessed directly:
-
-http://DEVICE_IP/filename.jpg
-
-http://DEVICE_IP/logo.png
-
-http://DEVICE_IP/video.mp4
+<b>
+Direct file access (acts as mini CDN):
+</b>
+<br></br>
+<br> http://DEVICE_IP/ < filename . filetype > </br>
+<p></p>
+<br></br>
 
 💡 Use Cases
 Smart IoT dashboards
@@ -177,7 +185,7 @@ Access files via URL
 Use API in your own projects
 
 
-<p><hr></p>
+
 
 
 ## 🧩 Integration Example (Web Project)
