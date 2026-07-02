@@ -121,7 +121,7 @@ void loop() {
 
 After uploading firmware, open:
 
-http://DEVICE_IP/
+http://DEVICE_IP/vfm
 
 👉 Dashboard (File Manager UI) will load automatically.
 
