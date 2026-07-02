@@ -117,8 +117,8 @@ void setup() {
 
 void loop() {
 }
-
-<hr>
+```
+<p><hr></p>
 
 🌐 Web Access
 
@@ -140,8 +140,11 @@ Route	Method	Description
 Any uploaded file can be accessed directly:
 
 http://DEVICE_IP/filename.jpg
+
 http://DEVICE_IP/logo.png
+
 http://DEVICE_IP/video.mp4
+
 💡 Use Cases
 Smart IoT dashboards
 Local network file sharing
@@ -152,12 +155,19 @@ Smart home file interface
 🔥 Web UI Features
 
 ✔ File upload panel
+
 ✔ Storage usage monitor
+
 ✔ File list viewer
+
 ✔ Image thumbnails
+
 ✔ Delete button
+
 ✔ View/Open file in new tab
+
 ✔ Drag & Drop upload support
+
 
 ⚡ Example Workflow
 Connect ESP to WiFi
@@ -165,35 +175,37 @@ Open IP in browser
 Upload files via web UI
 Access files via URL
 Use API in your own projects
+
+
+<p><hr></p>
+
+
 🧩 Integration Example (Web Project)
 
 You can use uploaded files inside your own website:
 
+```cpp
 <img src="http://DEVICE_IP/logo.png" />
 <script>
 fetch("http://DEVICE_IP/files")
   .then(r => r.json())
   .then(data => console.log(data));
 </script>
+```
+<p><hr></p>
+
+
 🧠 Technical Notes
 Fully async architecture (no blocking server calls)
 Designed for low memory microcontrollers
 Optimized for LAN usage
 Works as embedded HTTP file server
 
-🧩 Integration Example
-
-<img src="http://DEVICE_IP/logo.png">
-
-<script>
-fetch("http://DEVICE_IP/files")
-.then(r => r.json())
-.then(d => console.log(d));
-</script>
 
 👨‍💻 Author
 
-Mostafa MirMousavi (viramedar)
+<a href="https://t.me/viraep"><b>Mostafa MirMousavi</b></a>  <a href="https://t.me/viramedar"><b>(viramedar)</b></a>
+
 Embedded Systems | Network Engineering | IoT Development | Infrastructure Design
 
 📜 License
