@@ -88,6 +88,309 @@ Install these libraries:
 
 ---
 
+## 📚 API Reference
+
+### ViraMediaWeb
+
+Main library class for managing web-based media services.
+
+---
+
+### Create Object
+
+```cpp
+ViraMediaWeb media;
+```
+### begin()
+
+Initialize ViraMediaWeb and LittleFS filesystem.
+```cpp
+bool begin();
+```
+
+## Example:
+```cpp
+if(!media.begin()){
+    Serial.println("Media Init Failed");
+}
+```
+### attach()
+
+Attach ViraMediaWeb to AsyncWebServer.
+```cpp
+void attach(AsyncWebServer &server);
+```
+
+## Example:
+```cpp
+AsyncWebServer server(80);
+
+media.attach(server);
+```
+
+### Creates internal routes:
+```html
+/upload
+/files
+/storage
+/delete
+/vfm
+```
+
+
+### handle()
+
+Main loop handler.
+```cpp
+void handle();
+```
+
+
+## Example:
+```cpp
+void loop(){
+    media.handle();
+}
+```
+
+
+### ViraFileSystem API
+
+Filesystem management based on LittleFS.
+```cpp
+begin()
+```
+
+## Initialize filesystem.
+```cpp
+bool begin();
+```
+
+
+### open()
+
+Open a file.
+
+```cpp
+File open(
+    const String &path,
+    const char *mode
+);
+```
+
+### exists()
+
+Check if a file exists.
+```cpp
+bool exists(
+    const String &path
+);
+```
+
+### remove()
+
+Delete a file.
+
+```cpp
+bool remove(
+    const String &path
+);
+```
+
+### rename()
+
+Rename a file.
+
+```cpp
+bool rename(
+    const String &oldName,
+    const String &newName
+);
+```
+
+### mkdir()
+
+Create a directory.
+
+```cpp
+bool mkdir(
+    const String &path
+);
+```
+
+### rmdir()
+
+Remove a directory.
+
+```cpp
+bool rmdir(
+    const String &path
+);
+```
+
+
+### isFile()
+
+Check if path is a file.
+```cpp
+bool isFile(
+    const String &path
+);
+```
+
+### isDirectory()
+
+Check if path is a directory.
+```cpp
+bool isDirectory(
+    const String &path
+);
+```
+
+
+### fileSize()
+
+Get file size.
+```cpp
+size_t fileSize(
+    const String &path
+);
+```
+
+
+### Storage Information
+
+# Get LittleFS storage information.
+```cpp
+uint32_t totalBytes();
+
+uint32_t usedBytes();
+
+uint32_t freeBytes();
+```
+
+
+### normalizePath()
+
+Normalize filesystem path.
+```cpp
+String normalizePath(
+    const String &path
+);
+```
+
+
+### UploadManager API
+
+File upload management.
+
+### attach()
+
+Enable upload service.
+```cpp
+void attach(
+    AsyncWebServer *server,
+    ViraFileSystem *fs
+);
+```
+
+
+## Upload endpoint:
+```html
+POST /upload
+```
+
+
+## Supports:
+```html
+multipart/form-data
+```
+
+
+### Gallery API
+
+File browser and gallery service.
+
+### attach()
+
+Enable gallery services.
+```cpp
+void attach(
+    AsyncWebServer *server,
+    ViraFileSystem *fs
+);
+```
+
+### Available Routes
+# List Files
+```html
+GET /files
+```
+Returns file list in JSON format.
+
+
+
+### Storage Information
+```html
+GET /storage
+```
+
+Returns:
+```html
+{
+ "total":4096000,
+ "used":12000,
+ "free":4084000
+}
+```
+
+### Search Files
+```html
+GET /search?q=file
+```
+Search files by name.
+
+
+### Delete File
+```html
+GET /delete?name=file.jpg
+```
+Delete selected file.
+
+
+
+### WebUI API
+Built-in ViraMediaWeb File Manager interface.
+
+
+### attach()
+
+Enable Web UI.
+```cpp
+void attach(
+    AsyncWebServer *server
+);
+```
+
+
+### Web interface:
+```html
+http://device-ip/vfm
+```
+
+
+### Features:
+
+1) File Upload
+2) File List
+3) Image Preview
+4) File Delete
+5) Storage Information
+6) Drag & Drop Upload
+
+ 
+---
+
 ## 🚀 Quick Start Example
 
 ```cpp id="vira_example"
