@@ -528,4 +528,3 @@ MIT License
 
 Turn your ESP device into a smart web storage node inside your network
 
-

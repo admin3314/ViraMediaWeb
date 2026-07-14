@@ -1,0 +1,22 @@
+# Arduino IDE
+*.hex
+*.elf
+*.map
+
+# Build files
+build/
+.vscode/
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local test
+secrets.h
+credentials.h
