@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">🚀 ViraMediaWeb</h1>
-<h5 align="center">Designed By Mostafa MirMousavi</h5>
+<h5 align="center">Designed By Mostafa Mir Mousavi</h5>
 
 <p align="center">
 Lightweight Web File Manager + Media Server + Mini CDN for ESP8266 / ESP32
@@ -516,7 +516,7 @@ Works as embedded HTTP file server
 
 ## 👨‍💻 Author
 
-<a href="https://t.me/viraep"><b>Mostafa MirMousavi</b></a>  <a href="https://t.me/viramedar"><b>(viramedar)</b></a>
+<a href="https://t.me/viraep"><b>Mostafa Mir Mousavi</b></a>  <a href="https://t.me/viramedar"><b>(viramedar)</b></a>
 
 Embedded Systems | Network Engineering | IoT Development | Infrastructure Design
 
